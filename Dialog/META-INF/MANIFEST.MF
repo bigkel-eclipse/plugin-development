@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Dialog
+Bundle-SymbolicName: Dialog;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime;bundle-version="3.13.0"
+Automatic-Module-Name: Dialog
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
