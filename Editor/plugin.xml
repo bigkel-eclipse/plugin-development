@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.itchenyang.editor.ui.PropertyEditor"
+            contributorClass="com.itchenyang.editor.ui.DefaultEditorContributor"
+            default="true"
+            extensions="properties"
+            icon="icons/sample.png"
+            id="com.itchenyang.editor"
+            name="Designer">
+      </editor>
+   </extension>
+
+</plugin>
