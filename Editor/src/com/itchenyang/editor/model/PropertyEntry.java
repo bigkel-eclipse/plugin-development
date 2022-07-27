@@ -6,7 +6,7 @@ public class PropertyEntry extends PropertyElement {
 
 	String key;
 	String value;
-	
+
 	public PropertyEntry(PropertyCategory parent, String key, String value) {
 		super(parent);
 		this.key = key;
@@ -20,7 +20,7 @@ public class PropertyEntry extends PropertyElement {
 
 	@Override
 	public void removeFromParent() {
-		((PropertyCategory)getParent()).removeEntry(this);
+		((PropertyCategory) getParent()).removeEntry(this);
 	}
 
 	public String getKey() {
@@ -28,11 +28,11 @@ public class PropertyEntry extends PropertyElement {
 	}
 
 	public void setKey(String text) {
-		if(key.equals(text)) {
+		if (key.equals(text)) {
 			return;
 		}
 		key = text;
-		((PropertyCategory)getParent()).keyChanged(this);
+		((PropertyCategory) getParent()).keyChanged(this);
 	}
 
 	public String getValue() {
@@ -40,13 +40,13 @@ public class PropertyEntry extends PropertyElement {
 	}
 
 	public void setValue(String text) {
-		if(value.equals(text)) {
+		if (value.equals(text)) {
 			return;
 		}
 		value = text;
-		((PropertyCategory)getParent()).valueChanged(this);
+		((PropertyCategory) getParent()).valueChanged(this);
 	}
-	
+
 	public void appendText(PrintWriter writer) {
 		writer.print(key);
 		writer.print(" = ");

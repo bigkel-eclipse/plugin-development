@@ -12,43 +12,43 @@ public class PropertyCategory extends PropertyElement {
 
 	private String name;
 	private List<PropertyEntry> entries;
-	
+
 	public PropertyCategory(PropertyFile parent, LineNumberReader reader) throws IOException {
 		super(parent);
-		
-		while(true) {
+
+		while (true) {
 			reader.mark(1);
 			int ch = reader.read();
-			if(ch ==-1)
+			if (ch == -1)
 				break;
 			reader.reset();
-			if(ch!='#') 
+			if (ch != '#')
 				break;
-			String line  = reader.readLine();
-			if(name == null) {
-				line =line.replace('#', ' ').trim();
-				if(line.length() >0) {
-					name  =line;
+			String line = reader.readLine();
+			if (name == null) {
+				line = line.replace('#', ' ').trim();
+				if (line.length() > 0) {
+					name = line;
 				}
 			}
 		}
-		if(name ==null)
+		if (name == null)
 			name = "";
-		
+
 		entries = new ArrayList<PropertyEntry>();
-		while(true) {
+		while (true) {
 			reader.mark(1);
 			int ch = reader.read();
-			if(ch ==-1)
+			if (ch == -1)
 				break;
 			reader.reset();
-			if(ch=='#') 
+			if (ch == '#')
 				break;
-			String line  = reader.readLine();
+			String line = reader.readLine();
 			int index = line.indexOf('=');
-			if(index != -1) {
-				String key = line.substring(0,index).trim();
-				String value = line.substring(index+1).trim();
+			if (index != -1) {
+				String key = line.substring(0, index).trim();
+				String value = line.substring(index + 1).trim();
 				entries.add(new PropertyEntry(this, key, value));
 			}
 		}
@@ -57,62 +57,60 @@ public class PropertyCategory extends PropertyElement {
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String text) {
-		if(name.equals(text))
+		if (name.equals(text))
 			return;
 		name = text;
-		((PropertyFile)getParent()).nameChanged(this);
+		((PropertyFile) getParent()).nameChanged(this);
 	}
-	
-	public Collection<PropertyEntry> getEntries(){
+
+	public Collection<PropertyEntry> getEntries() {
 		return entries;
 	}
-	
+
 	@Override
 	public PropertyElement[] getChildren() {
-		return (PropertyElement[])entries.toArray(new PropertyElement[entries.size()]);
+		return (PropertyElement[]) entries.toArray(new PropertyElement[entries.size()]);
 	}
 
 	public void addEntry(PropertyEntry entry) {
-		if(!entries.contains(entry)) {
+		if (!entries.contains(entry)) {
 			entries.add(entry);
-			((PropertyFile)getParent()).entryAdded(this, entry);
+			((PropertyFile) getParent()).entryAdded(this, entry);
 		}
 	}
-	
+
 	public void removeEntry(PropertyEntry entry) {
-		if(entries.remove(entry)) {
+		if (entries.remove(entry)) {
 			entries.add(entry);
-			((PropertyFile)getParent()).entryRemoved(this, entry);
+			((PropertyFile) getParent()).entryRemoved(this, entry);
 		}
 	}
-	
+
 	@Override
 	public void removeFromParent() {
-		((PropertyFile)getParent()).removeCategory(this);
+		((PropertyFile) getParent()).removeCategory(this);
 	}
-	
+
 	public void keyChanged(PropertyEntry entry) {
-		((PropertyFile)getParent()).keyChanged(this, entry);
+		((PropertyFile) getParent()).keyChanged(this, entry);
 	}
-	
+
 	public void valueChanged(PropertyEntry entry) {
-		((PropertyFile)getParent()).valueChanged(this, entry);
+		((PropertyFile) getParent()).valueChanged(this, entry);
 	}
-	
+
 	public void appendText(PrintWriter writer) {
-		if(name.length() >0) {
+		if (name.length() > 0) {
 			writer.print("# ");
 			writer.print(name);
 			writer.print("\n");
 		}
 		Iterator<PropertyEntry> iter = entries.iterator();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			iter.next().appendText(writer);
 		}
 	}
-	
-	
 
 }

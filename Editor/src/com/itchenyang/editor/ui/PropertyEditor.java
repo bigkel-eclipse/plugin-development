@@ -41,16 +41,15 @@ public class PropertyEditor extends MultiPageEditorPart {
 	private TreeColumn valueColumn;
 	private PropertyEditorLabelProvider treeLabelProvider;
 	private PropertyEditorContentProvider treeContentProvider;
-	
-	
+
 	@Override
 	public void init(IEditorSite site, IEditorInput input) throws PartInitException {
-		if(!(input instanceof IFileEditorInput)) {
+		if (!(input instanceof IFileEditorInput)) {
 			throw new PartInitException("Invalid input: must be IFileEditorInput");
 		}
 		super.init(site, input);
 	}
-    
+
 	@Override
 	protected void createPages() {
 		createPropertiesPage();
@@ -66,28 +65,27 @@ public class PropertyEditor extends MultiPageEditorPart {
 		setTitleToolTip(input.getToolTipText());
 	}
 
-
 	private void createPropertiesPage() {
 		Composite treeContainer = new Composite(getContainer(), SWT.NONE);
 
 		TreeColumnLayout layOut = new TreeColumnLayout();
 		treeContainer.setLayout(layOut);
-		
-		treeViewer = new TreeViewer(treeContainer, SWT.MULTI|SWT.FULL_SELECTION);
+
+		treeViewer = new TreeViewer(treeContainer, SWT.MULTI | SWT.FULL_SELECTION);
 		Tree tree = treeViewer.getTree();
 		tree.setLayoutData(new FillLayout());
 		tree.setHeaderVisible(true);
 		tree.setLinesVisible(true);
-		
+
 		keyColumn = new TreeColumn(tree, SWT.NONE);
 		keyColumn.setText("Key");
 		layOut.setColumnData(keyColumn, new ColumnWeightData(2));
-		
+
 		valueColumn = new TreeColumn(tree, SWT.NONE);
 		valueColumn.setText("Value");
 		layOut.setColumnData(valueColumn, new ColumnWeightData(3));
-		
-		int index= addPage(treeContainer);
+
+		int index = addPage(treeContainer);
 		setPageText(index, "Editor");
 	}
 
@@ -103,16 +101,15 @@ public class PropertyEditor extends MultiPageEditorPart {
 
 	@Override
 	public void doSave(IProgressMonitor monitor) {
-		if(getActivePage() == 0&& isPageModifed)
+		if (getActivePage() == 0 && isPageModifed)
 			updateTextEditorFromTree();
 		isPageModifed = false;
 		textEditor.doSave(monitor);
 	}
 
-
 	@Override
 	public void doSaveAs() {
-		if(getActivePage() == 0&& isPageModifed)
+		if (getActivePage() == 0 && isPageModifed)
 			updateTextEditorFromTree();
 		isPageModifed = false;
 		textEditor.doSaveAs();
@@ -120,14 +117,13 @@ public class PropertyEditor extends MultiPageEditorPart {
 		updateTitle();
 	}
 
-
 	@Override
 	public boolean isSaveAsAllowed() {
 		return true;
 	}
 
 	public void setFocus() {
-		switch(getActivePage()) {
+		switch (getActivePage()) {
 		case 0:
 			treeViewer.getTree().setFocus();
 		case 1:
@@ -135,26 +131,26 @@ public class PropertyEditor extends MultiPageEditorPart {
 			break;
 		}
 	}
-	
+
 	@SuppressWarnings("static-access")
 	void initTreeContent() {
 		treeContentProvider = new PropertyEditorContentProvider();
 		treeViewer.setContentProvider(treeContentProvider);
 		treeLabelProvider = new PropertyEditorLabelProvider();
 		treeViewer.setLabelProvider(treeLabelProvider);
-		
+
 		treeViewer.setInput(new PropertyFile(""));
 		treeViewer.getTree().getDisplay().asyncExec(new Runnable() {
 			@Override
 			public void run() {
 				updateTreeFromTextEditor();
-				
+
 			}
-			
+
 		});
 		treeViewer.setAutoExpandLevel(treeViewer.ALL_LEVELS);
 	}
-	
+
 	void updateTreeFromTextEditor() {
 		PropertyFile propertyFile = (PropertyFile) treeViewer.getInput();
 		propertyFile.removePropertyFileListener(propertyFileListener);
@@ -164,7 +160,7 @@ public class PropertyEditor extends MultiPageEditorPart {
 		treeViewer.setInput(propertyFile);
 		propertyFile.addPropertyFileListener(propertyFileListener);
 	}
-	
+
 	void initTreeEditors() {
 		TreeViewerColumn column1 = new TreeViewerColumn(treeViewer, keyColumn);
 		TreeViewerColumn column2 = new TreeViewerColumn(treeViewer, valueColumn);
@@ -180,54 +176,55 @@ public class PropertyEditor extends MultiPageEditorPart {
 		});
 		column1.setEditingSupport(new EditingSupport(treeViewer) {
 			TextCellEditor editor = null;
+
 			@Override
 			protected void setValue(Object element, Object value) {
-				if(value == null) {
+				if (value == null) {
 					return;
 				}
-				String text = ((String)value).trim();
-				if(element instanceof PropertyCategory)
-					((PropertyCategory)element).setName(text);
-				if(element instanceof PropertyEntry) {
-					((PropertyEntry)element).setKey(text);
+				String text = ((String) value).trim();
+				if (element instanceof PropertyCategory)
+					((PropertyCategory) element).setName(text);
+				if (element instanceof PropertyEntry) {
+					((PropertyEntry) element).setKey(text);
 				}
 			}
-			
+
 			@Override
 			protected Object getValue(Object element) {
 				return treeLabelProvider.getColumnText(element, 0);
 			}
-			
+
 			@Override
 			protected CellEditor getCellEditor(Object element) {
-				if(editor == null) {
-					Composite tree = (Composite)treeViewer.getControl();
+				if (editor == null) {
+					Composite tree = (Composite) treeViewer.getControl();
 					editor = new TextCellEditor(tree);
 					editor.setValidator(new ICellEditorValidator() {
 						@Override
 						public String isValid(Object value) {
-							if(((String)value).trim().length()==0)
+							if (((String) value).trim().length() == 0)
 								return "key must not be empty string";
 							return null;
 						}
 					});
-					
+
 					editor.addListener(new ICellEditorListener() {
 						@Override
 						public void editorValueChanged(boolean oldValidState, boolean newValidState) {
 							setErrorMessage(editor.getErrorMessage());
 						}
-						
+
 						@Override
 						public void cancelEditor() {
 							setErrorMessage(null);
 						}
-						
+
 						@Override
 						public void applyEditorValue() {
 							setErrorMessage(null);
 						}
-						
+
 						private void setErrorMessage(String errorMessage) {
 							getEditorSite().getActionBars().getStatusLineManager().setErrorMessage(errorMessage);
 						}
@@ -235,127 +232,131 @@ public class PropertyEditor extends MultiPageEditorPart {
 				}
 				return editor;
 			}
-			
+
 			@Override
 			protected boolean canEdit(Object element) {
 				return true;
 			}
 		});
-		
+
 		column2.setEditingSupport(new EditingSupport(treeViewer) {
 			TextCellEditor editor = null;
+
 			@Override
 			protected void setValue(Object element, Object value) {
-				String text = ((String)value).trim();
-				if(element instanceof PropertyEntry)
-					((PropertyEntry)element).setValue(text);
+				String text = ((String) value).trim();
+				if (element instanceof PropertyEntry)
+					((PropertyEntry) element).setValue(text);
 			}
+
 			@Override
 			protected Object getValue(Object element) {
 				return treeLabelProvider.getColumnText(element, 1);
 			}
+
 			@Override
 			protected CellEditor getCellEditor(Object element) {
-				if(editor == null) {
-					Composite tree = (Composite)treeViewer.getControl();
+				if (editor == null) {
+					Composite tree = (Composite) treeViewer.getControl();
 					editor = new TextCellEditor(tree);
 				}
 				return editor;
 			}
+
 			@Override
 			protected boolean canEdit(Object element) {
 				return element instanceof PropertyEntry;
 			}
 		});
-		//treeViewer.getColumnViewerEditor().addEditorActivationListener(new AltClickCellEditListener());
+		// treeViewer.getColumnViewerEditor().addEditorActivationListener(new
+		// AltClickCellEditListener());
 	}
-	
+
 	private boolean isPageModifed;
-	
+
 	public void treeModified() {
 		boolean wasDirty = isDirty();
 		isPageModifed = true;
-		if(!wasDirty) {
-			firePropertyChange(IEditorPart.PROP_DIRTY);//鍒锋柊椤甸潰鐘舵��
+		if (!wasDirty) {
+			firePropertyChange(IEditorPart.PROP_DIRTY);// 鍒锋柊椤甸潰鐘舵��
 		}
 	}
-	
+
 	private final PropertyFileListener propertyFileListener = new PropertyFileListener() {
-		
+
 		@Override
 		public void valueChanged(PropertyCategory category, PropertyEntry entry) {
 			treeViewer.refresh(entry);
 			treeModified();
-			
+
 		}
-		
+
 		@Override
 		public void nameChanged(PropertyCategory category) {
 			treeViewer.refresh(category);
 			treeModified();
-			
+
 		}
-		
+
 		@Override
 		public void keyChanged(PropertyCategory category, PropertyEntry entry) {
 			treeViewer.refresh(entry);
 			treeModified();
 		}
-		
+
 		@Override
 		public void entryRemoved(PropertyCategory category, PropertyEntry entry) {
 			treeViewer.refresh();
 			treeModified();
 		}
-		
+
 		@Override
 		public void entryAdded(PropertyCategory category, PropertyEntry entry) {
 			treeViewer.refresh();
 			treeModified();
 		}
-		
+
 		@Override
 		public void categoryRemoved(PropertyCategory category) {
 			treeViewer.refresh();
 			treeModified();
 		}
-		
+
 		@Override
 		public void categoryAdded(PropertyCategory category) {
 			treeViewer.refresh();
 			treeModified();
 		}
 	};
-	
-	
+
 	protected void handlePropertyChange(int propertyId) {
-		if(propertyId == IEditorPart.PROP_DIRTY)
+		if (propertyId == IEditorPart.PROP_DIRTY)
 			isPageModifed = isDirty();
 		super.handlePropertyChange(propertyId);
 	}
 
 	public boolean isDirty() {
-		return isPageModifed||super.isDirty();
+		return isPageModifed || super.isDirty();
 	}
-	
+
 	protected void pageChange(int newPageIndex) {
-		switch(newPageIndex) {
+		switch (newPageIndex) {
 		case 0:
-			if(isDirty())
+			if (isDirty())
 				updateTreeFromTextEditor();
 			break;
 		case 1:
-			if(isPageModifed)
+			if (isPageModifed)
 				updateTextEditorFromTree();
 			break;
 		}
 		isPageModifed = false;
 		super.pageChange(newPageIndex);
 	}
-	
+
 	void updateTextEditorFromTree() {
 		IDocument document = textEditor.getDocumentProvider().getDocument(textEditor.getEditorInput());
-		document.set(((PropertyFile)treeViewer.getInput()).asText());
+		document.set(((PropertyFile) treeViewer.getInput()).asText());
 	}
-	
+
 }
