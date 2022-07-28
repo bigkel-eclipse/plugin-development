@@ -1,0 +1,7 @@
+# Tracing options for the subAndPublish.diagram plug-in
+
+# Common issues
+subAndPublish.diagram/debug=false
+
+# Visual IDs
+subAndPublish.diagram/debug/visualID=false

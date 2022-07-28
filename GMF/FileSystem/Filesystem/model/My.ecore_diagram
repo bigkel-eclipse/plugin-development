@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_liBGYA5VEe2KUsnF_sMAVw" type="Ecore" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_lkoVgA5VEe2KUsnF_sMAVw" type="2001" fontName="Microsoft YaHei UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_lkoVgg5VEe2KUsnF_sMAVw" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_lkoVgw5VEe2KUsnF_sMAVw" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_lkoVhA5VEe2KUsnF_sMAVw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_lkoVhQ5VEe2KUsnF_sMAVw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_lkoVhg5VEe2KUsnF_sMAVw" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_lkoVhw5VEe2KUsnF_sMAVw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_lkoViA5VEe2KUsnF_sMAVw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_lkoViQ5VEe2KUsnF_sMAVw" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_lkoVig5VEe2KUsnF_sMAVw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_lkoViw5VEe2KUsnF_sMAVw"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="My.ecore#//Filesystem"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lkoVgQ5VEe2KUsnF_sMAVw" x="275" y="5"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_lkoVjA5VEe2KUsnF_sMAVw" type="2001" fontName="Microsoft YaHei UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_lkoVjg5VEe2KUsnF_sMAVw" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_lkoVjw5VEe2KUsnF_sMAVw" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_lkoVkA5VEe2KUsnF_sMAVw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_lkoVkQ5VEe2KUsnF_sMAVw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_lkoVkg5VEe2KUsnF_sMAVw" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_lkoVkw5VEe2KUsnF_sMAVw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_lkoVlA5VEe2KUsnF_sMAVw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_lkoVlQ5VEe2KUsnF_sMAVw" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_lkoVlg5VEe2KUsnF_sMAVw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_lkoVlw5VEe2KUsnF_sMAVw"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="My.ecore#//File"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lkoVjQ5VEe2KUsnF_sMAVw" x="395" y="125"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_lkoVmA5VEe2KUsnF_sMAVw" type="2001" fontName="Microsoft YaHei UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_lko8kA5VEe2KUsnF_sMAVw" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_lko8kQ5VEe2KUsnF_sMAVw" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_lko8kg5VEe2KUsnF_sMAVw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_lko8kw5VEe2KUsnF_sMAVw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_lko8lA5VEe2KUsnF_sMAVw" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_lko8lQ5VEe2KUsnF_sMAVw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_lko8lg5VEe2KUsnF_sMAVw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_lko8lw5VEe2KUsnF_sMAVw" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_lko8mA5VEe2KUsnF_sMAVw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_lko8mQ5VEe2KUsnF_sMAVw"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="My.ecore#//Folder"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lkoVmQ5VEe2KUsnF_sMAVw" x="25" y="110"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_liBtcA5VEe2KUsnF_sMAVw"/>
+  <element xmi:type="ecore:EPackage" href="My.ecore#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_lksm8A5VEe2KUsnF_sMAVw" type="4003" source="_lkoVgA5VEe2KUsnF_sMAVw" target="_lkoVmA5VEe2KUsnF_sMAVw">
+    <children xmi:type="notation:DecorationNode" xmi:id="_lksm8w5VEe2KUsnF_sMAVw" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_lksm9A5VEe2KUsnF_sMAVw" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_lksm9Q5VEe2KUsnF_sMAVw" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_lksm9g5VEe2KUsnF_sMAVw" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_lksm8Q5VEe2KUsnF_sMAVw" fontName="Microsoft YaHei UI"/>
+    <element xmi:type="ecore:EReference" href="My.ecore#//Filesystem/folders"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lksm8g5VEe2KUsnF_sMAVw" points="[0, 0, -228, -62]$[228, 47, 0, -15]$[228, 62, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lk5bQQ5VEe2KUsnF_sMAVw" id="(0.24050632911392406,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lk5bQg5VEe2KUsnF_sMAVw" id="(0.49557522123893805,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_lkt1EA5VEe2KUsnF_sMAVw" type="4003" source="_lkoVgA5VEe2KUsnF_sMAVw" target="_lkoVjA5VEe2KUsnF_sMAVw">
+    <children xmi:type="notation:DecorationNode" xmi:id="_lkt1Ew5VEe2KUsnF_sMAVw" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_lkt1FA5VEe2KUsnF_sMAVw" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_lkt1FQ5VEe2KUsnF_sMAVw" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_lkt1Fg5VEe2KUsnF_sMAVw" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_lkt1EQ5VEe2KUsnF_sMAVw" fontName="Microsoft YaHei UI"/>
+    <element xmi:type="ecore:EReference" href="My.ecore#//Filesystem/files"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lkt1Eg5VEe2KUsnF_sMAVw" points="[0, 0, 0, -181]$[0, 181, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lk5bQw5VEe2KUsnF_sMAVw" id="(0.4936708860759494,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lk5bRA5VEe2KUsnF_sMAVw" id="(0.49557522123893805,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_lkucIA5VEe2KUsnF_sMAVw" type="4002" source="_lkoVmA5VEe2KUsnF_sMAVw" target="_lkoVmA5VEe2KUsnF_sMAVw">
+    <children xmi:type="notation:DecorationNode" xmi:id="_lkucIw5VEe2KUsnF_sMAVw" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_lkucJA5VEe2KUsnF_sMAVw" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_lkucJQ5VEe2KUsnF_sMAVw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_lkucJg5VEe2KUsnF_sMAVw" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_lkucIQ5VEe2KUsnF_sMAVw" fontName="Microsoft YaHei UI"/>
+    <element xmi:type="ecore:EReference" href="My.ecore#//Folder/requestFloder"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lkucIg5VEe2KUsnF_sMAVw" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_lkvDMA5VEe2KUsnF_sMAVw" type="4002" source="_lkoVmA5VEe2KUsnF_sMAVw" target="_lkoVjA5VEe2KUsnF_sMAVw">
+    <children xmi:type="notation:DecorationNode" xmi:id="_lkvqQA5VEe2KUsnF_sMAVw" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_lkvqQQ5VEe2KUsnF_sMAVw" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_lkvqQg5VEe2KUsnF_sMAVw" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_lkvqQw5VEe2KUsnF_sMAVw" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_lkvDMQ5VEe2KUsnF_sMAVw" fontName="Microsoft YaHei UI"/>
+    <element xmi:type="ecore:EReference" href="My.ecore#//Folder/requestFiles"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lkvDMg5VEe2KUsnF_sMAVw" points="[0, 0, -74, -60]$[74, 60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lk40MA5VEe2KUsnF_sMAVw" id="(0.49557522123893805,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lk5bQA5VEe2KUsnF_sMAVw" id="(0.24778761061946902,0.0)"/>
+  </edges>
+</notation:Diagram>
