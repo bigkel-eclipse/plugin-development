@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.itchenyang.library="http:///com/itchenyang/library.ecore">
+  <com.itchenyang.library:Book title="King Lear" author="/1"/>
+  <com.itchenyang.library:Writer name="William Shakespeare" books="/0"/>
+</xmi:XMI>
