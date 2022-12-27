@@ -1,0 +1,7 @@
+# Tracing options for the Math.diagram plug-in
+
+# Common issues
+Math.diagram/debug=false
+
+# Visual IDs
+Math.diagram/debug/visualID=false

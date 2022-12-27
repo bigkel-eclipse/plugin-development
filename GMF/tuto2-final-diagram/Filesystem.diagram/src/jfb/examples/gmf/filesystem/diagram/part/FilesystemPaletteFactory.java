@@ -1,0 +1,130 @@
+/*
+ * Copyright (c) 2009, Jean-François Brazeau. All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met:
+ * 
+ *  1. Redistributions of source code must retain the above copyright notice,
+ *     this list of conditions and the following disclaimer.
+ * 
+ *  2. Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in the
+ *     documentation and/or other materials provided with the distribution.
+ * 
+ *  3. The name of the author may not be used to endorse or promote products
+ *     derived from this software without specific prior written permission.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ * IMPLIEDWARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+ * OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+ * TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+ * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+package jfb.examples.gmf.filesystem.diagram.part;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import jfb.examples.gmf.filesystem.diagram.providers.FilesystemElementTypes;
+
+import org.eclipse.gef.Tool;
+import org.eclipse.gef.palette.PaletteContainer;
+import org.eclipse.gef.palette.PaletteGroup;
+import org.eclipse.gef.palette.PaletteRoot;
+import org.eclipse.gef.palette.ToolEntry;
+import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
+
+/**
+ * @generated
+ */
+public class FilesystemPaletteFactory {
+
+	/**
+	 * @generated
+	 */
+	public void fillPalette(PaletteRoot paletteRoot) {
+		paletteRoot.add(createFilesystem1Group());
+	}
+
+	/**
+	 * Creates "filesystem" palette tool group
+	 * @generated
+	 */
+	private PaletteContainer createFilesystem1Group() {
+		PaletteGroup paletteContainer = new PaletteGroup(
+				Messages.Filesystem1Group_title);
+		paletteContainer.setId("createFilesystem1Group"); //$NON-NLS-1$
+		paletteContainer.add(createFile1CreationTool());
+		paletteContainer.add(createFolder2CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createFile1CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(FilesystemElementTypes.File_2001);
+		types.add(FilesystemElementTypes.File_3002);
+		NodeToolEntry entry = new NodeToolEntry(
+				Messages.File1CreationTool_title,
+				Messages.File1CreationTool_desc, types);
+		entry.setId("createFile1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(FilesystemElementTypes
+				.getImageDescriptor(FilesystemElementTypes.File_2001));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createFolder2CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(FilesystemElementTypes.Folder_2002);
+		types.add(FilesystemElementTypes.Folder_3001);
+		NodeToolEntry entry = new NodeToolEntry(
+				Messages.Folder2CreationTool_title,
+				Messages.Folder2CreationTool_desc, types);
+		entry.setId("createFolder2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(FilesystemElementTypes
+				.getImageDescriptor(FilesystemElementTypes.Folder_2002));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static class NodeToolEntry extends ToolEntry {
+
+		/**
+		 * @generated
+		 */
+		private final List elementTypes;
+
+		/**
+		 * @generated
+		 */
+		private NodeToolEntry(String title, String description,
+				List elementTypes) {
+			super(title, description, null, null);
+			this.elementTypes = elementTypes;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Tool createTool() {
+			Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
+			tool.setProperties(getToolProperties());
+			return tool;
+		}
+	}
+}

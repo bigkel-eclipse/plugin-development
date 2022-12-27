@@ -1,0 +1,8 @@
+#Mon Nov 16 21:42:22 CET 2009
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/Filesystem/model/filesystem.genmodel
+gmf_dashboard/domainModel=platform\:/resource/Filesystem/model/filesystem.ecore
+gmf_dashboard/generationModel=platform\:/resource/Filesystem/model/filesystem.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/Filesystem/model/filesystem.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/Filesystem/model/filesystem.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/Filesystem/model/filesystem.gmftool

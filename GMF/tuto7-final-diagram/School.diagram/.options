@@ -1,0 +1,7 @@
+# Tracing options for the School.diagram plug-in
+
+# Common issues
+School.diagram/debug=false
+
+# Visual IDs
+School.diagram/debug/visualID=false

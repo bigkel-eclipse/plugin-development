@@ -1,0 +1,8 @@
+#Thu Nov 05 20:49:05 CET 2009
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/Math/model/math.genmodel
+gmf_dashboard/domainModel=platform\:/resource/Math/model/math.ecore
+gmf_dashboard/generationModel=platform\:/resource/Math/model/math.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/Math/model/math.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/Math/model/math.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/Math/model/math.gmftool
