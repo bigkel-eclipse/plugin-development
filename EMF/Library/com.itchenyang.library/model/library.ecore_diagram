@@ -15,7 +15,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_huwajVT-Ee249ODIwm5rsQ"/>
     </children>
     <element xmi:type="ecore:EClass" href="library.ecore#//Book"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_huwag1T-Ee249ODIwm5rsQ" x="348" y="288"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_huwag1T-Ee249ODIwm5rsQ" x="444" y="276"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_huwajlT-Ee249ODIwm5rsQ" type="2005" fontName="Microsoft YaHei UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_huwakFT-Ee249ODIwm5rsQ" type="5005"/>
@@ -28,7 +28,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_huwallT-Ee249ODIwm5rsQ"/>
     </children>
     <element xmi:type="ecore:EEnum" href="library.ecore#//BookCategory"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_huwaj1T-Ee249ODIwm5rsQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_huwaj1T-Ee249ODIwm5rsQ" x="36" y="84"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_huwal1T-Ee249ODIwm5rsQ" type="2001" fontName="Microsoft YaHei UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_huwamVT-Ee249ODIwm5rsQ" type="5001"/>
@@ -45,7 +45,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_huwaolT-Ee249ODIwm5rsQ"/>
     </children>
     <element xmi:type="ecore:EClass" href="library.ecore#//Library"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_huwamFT-Ee249ODIwm5rsQ" x="195"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_huwamFT-Ee249ODIwm5rsQ" x="228" y="120"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_huwao1T-Ee249ODIwm5rsQ" type="2001" fontName="Microsoft YaHei UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_huwapVT-Ee249ODIwm5rsQ" type="5001"/>
